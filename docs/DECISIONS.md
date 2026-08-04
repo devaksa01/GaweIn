@@ -1,19 +1,5 @@
 # Decisions
 
-## YYYY-MM-DD
-
-Decision:
-
-Kenapa:
-
-Alternatif:
-
-Trade-off:
+## DEC-001 | - | 2026-08-03
 
 ---
-
-## YYYY-MM-DD
-
-Decision:
-
-...

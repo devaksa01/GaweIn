@@ -1,54 +1,39 @@
-# Roadmap
+Milestone 1
 
-## Milestone 1
-
-Project Setup
-
-- Flutter
-- Git
-- Supabase
-
----
-
-## Milestone 2
-
+Epic:
 Authentication
 
+Features:
+
 - Login
-- Register
+
+Definition of done:
 
 ---
 
-## Milestone 3
+Milestone 2
 
-Profile
+Epic:
+Notes
 
----
+Features:
 
-## Milestone 4
+- Create Note
+- View Notes
 
-Create Job
-
----
-
-## Milestone 5
-
-Browse Job
+Definition of done:
 
 ---
 
-## Milestone 6
+Milestone 3
 
-Accept Job
+Epic:
+Notes
 
----
+Features
 
-## Milestone 7
+- Edit Note
+- Delete Note
 
-Testing
+Definition of done:
 
----
-
-## Milestone 8
-
-Deploy MVP
