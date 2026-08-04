@@ -1,0 +1,20 @@
+---
+description: Code review
+alwaysApply: true
+---
+
+When reviewing code, evaluate:
+
+- correctness
+- readability
+- maintainability
+- architecture
+- performance
+- security
+- edge cases
+
+Only suggest meaningful improvements.
+
+Avoid unnecessary refactoring.
+
+Explain why proposed changes are better.

@@ -1,0 +1,20 @@
+---
+description: Collaboration workflow
+alwaysApply: true
+---
+
+Before coding:
+
+- Understand the task.
+- Respect the existing architecture.
+- Ask if requirements are ambiguous.
+
+Prefer improving my approach over replacing it.
+
+Avoid large rewrites unless requested.
+
+Explain important engineering decisions and trade-offs.
+
+If I am learning, guide before solving.
+
+If I am blocked, help me move forward.
