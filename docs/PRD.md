@@ -1,7 +1,7 @@
 # Product Requirements Document (PRD)
 
-> Single source of truth for product requirements.
-> Focus on WHAT and WHY, not implementation.
+> Single source of truth untuk product requirements (WHAT & WHY).
+> Fitur konkret per versi → `FEATURES.md`. Timeline/milestone → `ROADMAP.md`. Section ini tidak menulis ulang keduanya.
 
 ---
 
@@ -31,23 +31,6 @@ Menjadi media sekaligus komunitas terbesar di Indonesia yang menghubungkan pembe
 
 ---
 
-# Goals (Current Release)
-
-- User bisa login
-- Bikin UI UX yang bagus
-- User bisa post Gawean(Pekerjaan)
-- User bisa ambil Gawean
-
----
-
-# Non-Goals (Current Release)
-
-- Bos Gawe bisa rate Gawers dan sebaliknya
-- User bisa search Gawean
-- User bisa chat
-
----
-
 # Target Users
 
 ## Primary
@@ -70,6 +53,23 @@ Menjadi media sekaligus komunitas terbesar di Indonesia yang menghubungkan pembe
 
 ---
 
+# Goals & Non-Goals (Current Release)
+
+> Goal di sini kualitatif (bukan fitur konkret). Untuk checklist fitur, lihat `FEATURES.md` section MVP.
+
+## Goals
+
+- User bisa login dan langsung mulai post/ambil gawean
+- UI/UX terasa rapi dan mudah dipakai
+
+## Non-Goals
+
+- Rating (Bos Gawe ↔ Gawers)
+- User bisa search Gawean
+- User bisa chat
+
+---
+
 # Core Flow
 
 ## Login Flow
@@ -80,7 +80,16 @@ Menjadi media sekaligus komunitas terbesar di Indonesia yang menghubungkan pembe
 → Homepage
 ```
 
-## Job Post Flow (Setelah Login)
+## Profile Flow
+
+```
+→ Buka App
+→ Pencet logo profile
+→ Ada informasi profile
+→ Kembali ke homepage
+```
+
+## Post Gawean Flow (Setelah Login)
 
 ```
 → Buka app
@@ -91,7 +100,7 @@ Menjadi media sekaligus komunitas terbesar di Indonesia yang menghubungkan pembe
 → Kembali ke homempage
 ```
 
-## Taking Job Flow (Setelah Login)
+## Taking Gawean Flow (Setelah Login)
 
 ```
 → Buka app
@@ -107,6 +116,7 @@ Menjadi media sekaligus komunitas terbesar di Indonesia yang menghubungkan pembe
 ```
 
 ## Postingan Saya Flow (Setelah Login)
+
 Description: 'Postingan Saya' berisi gawean yang user post sebagai Bos Gawe, masing-masing post bisa di klik untuk melihat Gawers mana saja yang menawarkan diri untuk melakukan gawean tersebut.
 
 ```
@@ -119,194 +129,75 @@ Description: 'Postingan Saya' berisi gawean yang user post sebagai Bos Gawe, mas
 → Masuk UI "Sedang Memantau"
 → User sebagai Bos Gawe bisa klik cancel, tunggu hingga waktu selesai, atau tunggu hingga pekerjaan selesai.
 → Kembali ke Homepage
-
 ```
 
 ---
 
-# Release Plan
+# Screens & Functional Requirements
 
-## v0.1.0 (MVP)
+> Struktur UI + requirement teknis digabung per layar. Nama layar harus sama dengan yang dipakai di Core Flow.
 
-Goal
+## Login Page
 
-...
+Purpose: Jadi awal semua user baru, user harus login terlebih dahulu untuk mengakses aplikasi, opsi login pada MVP (v0.1.0) hanya memperbolehkan akun google.
 
-Features
+Components: 
+-Login dengan akun google
 
-- [ ]
+Features / Requirements: 
+-Google OAuth
+-Jika sukses masuk ke homepage
+-Jika gagal tampilkan pesan error.
 
----
+Empty State: -
 
-## v0.2.0
+## Home Page
 
-Goal
+Purpose: Setelah login, akan selalu menjadi halaman yang ditampilkan ke user saat awal membuka aplikasi, dan jadi tempat untuk melihat semua list gawean yang ada. Setelah semua fitur selesai total idealnya kembali ke home. 
 
-...
+Components: 
+-Post gawean 
+-List postingan gawean 
+-Postingan Saya
+-Profile
+-Tombol Post Gawean
 
-Features
+Features / Requirements: Tampilkan list gawean, terus lakukan cek berkala apakah ada gawean yang baru di post.
 
-- [ ]
+Empty State: Saat list postingan kosong, tampilkan 'Belum ada gawean'
 
----
+## Detail Gawean
 
-## v0.3.0
+Purpose: Agar user dapat melihat detail gawean yang dipilih.
 
-Goal
+Components: 
+- Judul Gawean
+- Deskripsi gawean
+- Biaya
+- Status Gawean (Tersedia/Sudah diambil/)
+- Informasi bos gawe
+- Tombol ambil gawean
 
-...
+Features / Requirements:
+- Informasi detail (judul, deskripsi, biaya, status, informasi bos, dll) tentang job tersebut yang diambil dari database
+- Tombol ambil gawean, jika dipencet, requestnya akan masuk ke detail post tersebut di 'Postingan Saya' Bos Gawe
 
-Features
+Empty State: -
 
-- [ ]
+## Profile Page
 
----
+Purpose: Untuk melihat atau memodifikasi profile user, dan untuk logout.
 
-## v1.0.0
+Components: Foto profil, nama, akun google yang terkait, tombol logout
 
-Goal
-
-...
-
-Features
-
-- [ ]
-
----
-
-# MVP (Current Release)
-
-## In Scope
-
+Features / Requirements: 
 -
 
-## Deferred
+Empty State:
 
--
+## Cross-cutting Edge Cases
 
----
-
-# Screens
-
-## Home
-
-Purpose
-
-...
-
-Components
-
--
-
-Features
-
--
-
-Empty State
-
-...
-
----
-
-## Detail
-
-Purpose
-
-...
-
-Components
-
--
-
-Features
-
--
-
-Empty State
-
-...
-
----
-
-## Profile
-
-Purpose
-
-...
-
-Components
-
--
-
-Features
-
--
-
-Empty State
-
-...
-
----
-
-# Functional Requirements
-
-## Authentication
-
--
-
----
-
-## Home
-
--
-
----
-
-## Search
-
--
-
----
-
-## Profile
-
--
-
----
-
-# Non-Functional Requirements
-
-## Performance
-
--
-
----
-
-## Reliability
-
--
-
----
-
-## Security
-
--
-
----
-
-## Accessibility
-
--
-
----
-
-## Offline Support
-
--
-
----
-
-## Compatibility
+> Hanya edge case lintas-screen/lintas-flow.
 
 -
 
@@ -316,65 +207,60 @@ Empty State
 
 ## User
 
-Description
+- Description: 
+- Fields:
+  - id
+  - ...
 
-Fields
+## Gawean
 
-- id
-- ...
-
----
-
-## Job
-
-Description
-
-Fields
-
-- id
-- ...
-
----
+- Description:
+- Fields:
+  - id
+  - ...
 
 ## Application
 
-Description
-
-Fields
-
-- id
-- ...
+- Description:
+- Fields:
+  - id
+  - ...
 
 ---
 
-# Edge Cases
+# Non-Functional Requirements
 
+## Performance
+-
+
+## Reliability
+-
+
+## Security
+-
+
+## Accessibility
+-
+
+## Offline Support
+-
+
+## Compatibility
 -
 
 ---
 
-# Constraints
+# Constraints & Assumptions
 
-## Technical
+## Constraints
 
-See PROJECT.md
+Technical: See PROJECT.md
+Business: -
 
----
-
-## Business
-
+## Assumptions
 -
 
----
-
-# Assumptions
-
--
-
----
-
-# Dependencies
-
+## Dependencies
 -
 
 ---
