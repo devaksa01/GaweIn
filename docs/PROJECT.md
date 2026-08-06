@@ -1,17 +1,15 @@
 # Project Documentation
 
-> Single source of truth for project development.
-> Focus on HOW the project is developed.
+> Single source of truth untuk project development.
+> Fokus pada HOW project ini dikembangkan. Untuk WHAT & WHY (nama, deskripsi produk, goals) → `PRD.md`.
 
 ---
 
 # Overview
 
-Name:
+Name: GaweIn *(lihat PRD.md untuk deskripsi produk)*
 
-Description:
-
-Repository:
+Repository: https://github.com/devaksa01/gawein
 
 ---
 
