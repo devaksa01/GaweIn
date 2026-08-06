@@ -67,6 +67,8 @@ Menjadi media sekaligus komunitas terbesar di Indonesia yang menghubungkan pembe
 - Rating (Bos Gawe ↔ Gawers)
 - User bisa search Gawean
 - User bisa chat
+- Ada sistem notifikasi
+- Payment via aplikasi
 
 ---
 
@@ -95,7 +97,7 @@ Menjadi media sekaligus komunitas terbesar di Indonesia yang menghubungkan pembe
 → Buka app
 → Homepage
 → Post Gawean
-→ Masukan judul, deskripsi, lokasi, dan biaya
+→ Masukan detail informasi Gawean yang diminta
 → Pencet Post, lalu post masuk ke 'Postingan Saya' 
 → Kembali ke homempage
 ```
@@ -107,12 +109,12 @@ Menjadi media sekaligus komunitas terbesar di Indonesia yang menghubungkan pembe
 → Homepage
 → Lihat Postingan Gawean
 → Click Gawean Pilihan
-→ Baca
+→ Baca detail informasi gawean
 → Click Tawarkan Diri
 → Tunggu Bos Gawe Terima
-→ Jika diterima, masuk ke UI sedang bekerja yang berisi list kerjaan yang dipilih, dan timer menuju batas waktu kerjaan
-→ Jika sudah selesai, Gawers bisa click selesai
-→ Kembali ke homepage
+→ Setelah diterima, UI masuk ke sedang bekerja dengan timer deadline jika ada.
+→ Jika sudah selesai, gawers dapat click tombol selesai; Jika ada masalah, Gawers bisa click cancel.
+→ Kembali ke homepage.
 ```
 
 ## Postingan Saya Flow (Setelah Login)
@@ -166,6 +168,33 @@ Features / Requirements: Tampilkan list gawean, terus lakukan cek berkala apakah
 
 Empty State: Saat list postingan kosong, tampilkan 'Belum ada gawean'
 
+## Post Gawean
+Purpose: Berupa floating widget atau semacamnya, untuk Bos Gawe mengisi detail dan informasi Gawean untuk di post.
+
+Components:
+- Judul Gawean
+- Deskripsi gawean
+- Biaya
+- Lokasi
+- Waktu
+- Lama bekerja
+
+Features / Requirements:
+- Input untuk judul
+- Input untuk deskripsi
+- Input untuk biaya
+- Selection untuk Lokasi
+- Input untuk waktu (tanggal, bulan, tahun)
+- Input format 24 jam untuk lama bekerja
+
+Empty State: 
+- Placeholder untuk judul: 'Masukkan judul gawean disini...'
+- Placeholder untuk deskripsi: 'Masukkan detail gawean disini...'
+- Placeholder untuk biaya: 'Rp ...?'
+- Placeholder untuk lokasi: 'Pilih lokasi'
+- Placeholder untuk waktu: 'Tanggal, Bulan, Tahun'
+- Placeholder untuk lama bekerja: 'Butuh waktu berapa lama?'
+
 ## Detail Gawean
 
 Purpose: Agar user dapat melihat detail gawean yang dipilih.
@@ -174,6 +203,9 @@ Components:
 - Judul Gawean
 - Deskripsi gawean
 - Biaya
+- Lokasi
+- Waktu
+- Lama bekerja
 - Status Gawean (Tersedia/Sudah diambil/)
 - Informasi bos gawe
 - Tombol ambil gawean
@@ -188,12 +220,35 @@ Empty State: -
 
 Purpose: Untuk melihat atau memodifikasi profile user, dan untuk logout.
 
-Components: Foto profil, nama, akun google yang terkait, tombol logout
+Components: 
+- Foto profil 
+- Nama 
+- Akun google yang terkait 
+- Tombol logout
 
 Features / Requirements: 
--
+- Informasi yang dicantumkan oleh akun google untuk foto profil, dan nama.
 
-Empty State:
+Empty State: -
+
+## Saat Bekerja
+
+Purpose: Setelah Gawers mengajukan untuk melakukan pekerjaan dan diterima oleh bos kerja, UI Gawers langsung otomatis berpindah ke UI Sedang Bekerja, dan tidak bisa pindah UI sampe selesai.
+
+Components:
+- List tugas yang harus diselesaikan
+- Timer menuju deadline jika ada
+- Informasi biaya yang disetujui kedua pihak
+- Tombol selesaikan
+- Tombol cancel
+
+Features / Requirements: 
+- Mengambil detail informasi gawean dari database
+- Menghitung mundur lama kerja yang ditentukan Bos Gawe
+- Ganti status akun di database jadi sedang bekerja, dan cek berkala jadi jika user logout dan login lagi tetep masuk ke UI sedang bekerja.
+- Ganti status gawean di database jadi sedang dikerjakan atau semacamnya.
+
+Empty State: -
 
 ## Cross-cutting Edge Cases
 
@@ -231,22 +286,22 @@ Empty State:
 # Non-Functional Requirements
 
 ## Performance
--
+- 
 
 ## Reliability
 -
 
 ## Security
--
+- We dont sell user data
 
 ## Accessibility
--
+- 
 
 ## Offline Support
--
+- No offline support, karena aplikasi ini sangat berkaitan dengan pertukaran data dan informasi dengan server.
 
 ## Compatibility
--
+- Direncanakan dapat diakses pada berbagai platform (cross-platform)
 
 ---
 
@@ -255,28 +310,34 @@ Empty State:
 ## Constraints
 
 Technical: See PROJECT.md
-Business: -
+Business: Potongan biaya 10% dari setiap harga job.
 
 ## Assumptions
--
+- User terhubung dengan internet
+- User punya akun google
 
 ## Dependencies
--
+- 
 
 ---
 
 # Success Metrics
 
--
+- 100 active user
+- 4.5+ rating aplikasi
 
 ---
 
 # Risks
 
--
+- Kejahatan oleh oknum Gawers maupun Bos Gawe yang berniat jahat.
+- Gawers bekerja dengan buruk, atau tidak menuntaskan pekerjaan.
 
 ---
 
 # Open Questions
 
--
+- Gimana cara mengatasi oknum yang berencana melakukan hal jahat? resiko yang bisa datang dari gawers atau Bos Gawe.
+- Gimana kalau Gawers tidak melakukan pekerjaan dengan baik? 
+- Gimana rencana untuk mendapatkan keuntungan dari aplikasi tersebut?
+- Gimana rencana sistem pembayaran via aplikasi dan pemotongan biaya aplikasinya?
