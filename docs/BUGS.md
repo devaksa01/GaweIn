@@ -1,13 +1,12 @@
 # Bugs
 
-## BUG-001 | Open | High
+## BUG-001 | Open/Closed | High/Med/Low
 
 Summary
-- Login sometimes hangs.
+- ...
 
 Reproduce
-1. Open app
-2. Login with Google
+1. ...
 
 Cause
 - Unknown
@@ -15,18 +14,6 @@ Cause
 Fix
 - Investigating
 
----
-
-## BUG-002 | Fixed | Medium
-
-Summary
-- Notes not refreshing.
-
-Cause
-- Missing invalidate().
-
-Fix
-- Added cache invalidation.
-
 Version
-- Fixed in v0.3.2
+- 
+---
