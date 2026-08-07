@@ -4,6 +4,9 @@
 
 ---
 
+# Gawe
+Description: Kerja
+
 # Bos Gawe
 Description:
 Pemberi kerja serabutan.
@@ -18,4 +21,4 @@ Pekerja serabutan, yang bisa mengambil Gawean yang ditawarkan Bos Gawe
 # Gawean
 
 Description:
-Pekerjaan serabutan yang ditawarkan Bos Gawe, yang bisa diambil oleh Gawers.
+Kerjaan, dalam konteks aplikasi ini digunakan untuk merepresentasikan pekerjaan serabutan yang ditawarkan Bos Gawe, yang bisa diambil oleh Gawers.
